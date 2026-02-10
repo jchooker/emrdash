@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/emrdash-client/" />
+  <Folder Name="/EMRDash.AI.Python/" />
+  <Project Path="../EMRDash.Data/EMRDash.Data.csproj" />
+  <Project Path="EMRDash.csproj" />
+</Solution>
