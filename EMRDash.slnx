@@ -1,6 +1,12 @@
 <Solution>
   <Folder Name="/emrdash-client/" />
-  <Folder Name="/EMRDash.AI.Python/" />
+  <Folder Name="/EMRDash.AI.Python/">
+    <File Path="ai_service.py" />
+    <File Path="app.py" />
+    <File Path="npi_verification.py" />
+    <File Path="requirements.txt" />
+    <File Path="__init__.py" />
+  </Folder>
   <Project Path="../EMRDash.Data/EMRDash.Data.csproj" />
   <Project Path="EMRDash.csproj" />
 </Solution>

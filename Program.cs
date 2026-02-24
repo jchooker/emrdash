@@ -1,3 +1,4 @@
+using EMRDash.Core.Services;
 using EMRDash.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +11,21 @@ builder.Services.AddDbContext<EMRDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddHttpClient<AISummaryService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
+app.UseCors("DevCors");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
